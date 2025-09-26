@@ -1,0 +1,8 @@
+import calendar
+# Define month and year
+year = 2025
+month = 9   # September
+
+# Generate calendar
+print("Calendar for", month, year)
+print(calendar.month(year, month))
