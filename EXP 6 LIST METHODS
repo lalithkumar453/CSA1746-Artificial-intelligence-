@@ -1,0 +1,32 @@
+# Initial list
+my_list = [1, 2, 3]
+print("Original List:", my_list)
+
+# 1. Add (Insert at specific position)
+my_list.insert(1, 100)   # Insert 100 at index 1
+print("After Insert (Add):", my_list)
+
+# 2. Append (Add element at the end)
+my_list.append(200)
+print("After Append:", my_list)
+
+# 3. Extend (Add multiple elements from another list)
+my_list.extend([300, 400, 500])
+print("After Extend:", my_list)
+
+# 4. Delete (Remove element)
+my_list.remove(100)      # Removes the first occurrence of 100
+print("After Remove (Delete 100):", my_list)
+
+# Deleting using pop()
+popped_item = my_list.pop()  # Removes last element
+print("After Pop (Last element removed):", my_list)
+print("Popped Item:", popped_item)
+
+# Deleting using del
+del my_list[0]   # Deletes element at index 0
+print("After del (Delete first element):", my_list)
+
+# Clear all elements
+my_list.clear()
+print("After Clear (Empty list):", my_list)
