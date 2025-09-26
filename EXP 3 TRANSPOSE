@@ -1,0 +1,19 @@
+A = [[1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9]]
+
+print("Original Matrix:")
+for row in A:
+    print(row)
+
+# Transpose the matrix
+transpose = []
+for i in range(len(A[0])):  # number of columns
+    row = []
+    for j in range(len(A)):  # number of rows
+        row.append(A[j][i])
+    transpose.append(row)
+
+print("\nTranspose of Matrix:")
+for row in transpose:
+    print(row)
