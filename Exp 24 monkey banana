@@ -1,0 +1,16 @@
+move(state(middle, onbox, middle, hasnot),
+     grasp,
+     state(middle, onbox, middle, has)).
+
+% ----- Path search with visited states -----
+
+path(State, Plan) :-
+    path(State, [State], Plan).   % Start with initial state marked visited
+
+path(State, _, []) :-
+    goal(State).                  % Success when banana is grasped
+
+path(State, Visited, [Action|Rest]) :-
+    move(State, Action, NewState),
+    \+ member(NewState, Visited), % Avoid cycles
+    path(NewState, [NewState|Visited], Rest).
