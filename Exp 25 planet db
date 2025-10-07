@@ -1,0 +1,18 @@
+% Facts
+planet(mercury, terrestrial, 57.9, 0).
+planet(venus, terrestrial, 108.2, 0).
+planet(earth, terrestrial, 149.6, 1).
+planet(mars, terrestrial, 227.9, 2).
+planet(jupiter, gas_giant, 778.3, 79).
+planet(saturn, gas_giant, 1427.0, 82).
+planet(uranus, ice_giant, 2871.0, 27).
+planet(neptune, ice_giant, 4497.1, 14).
+
+% Rules
+far_from_sun(Planet) :-
+    planet(Planet, _, Distance, _),
+    Distance > 1000.
+
+many_moons(Planet) :-
+    planet(Planet, _, _, Moons),
+    Moons > 20.
