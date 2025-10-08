@@ -1,0 +1,12 @@
+% Facts
+bird(sparrow).  
+bird(eagle).  
+bird(penguin).  
+bird(ostrich).  
+
+can_fly(sparrow).  
+can_fly(eagle).  
+
+% Rule: check if a bird can fly or not
+fly_status(Bird) :- can_fly(Bird), write(Bird), write(' can fly.'), nl.
+fly_status(Bird) :- bird(Bird), \+ can_fly(Bird), write(Bird), write(' cannot fly.'), nl.
