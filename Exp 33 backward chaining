@@ -1,0 +1,15 @@
+% Facts: teacher teaches which subject
+teaches(mr_smith, cs101).
+teaches(ms_jones, math102).
+teaches(mr_brown, phy103).
+
+% Facts: student enrolled in which subject
+enrolled(john, cs101).
+enrolled(mary, math102).
+enrolled(peter, phy103).
+enrolled(susan, cs101).
+
+% Rule: find teacher of a student
+teacher_of(Student, Teacher) :-
+    enrolled(Student, SubCode),
+    teaches(Teacher, SubCode).
