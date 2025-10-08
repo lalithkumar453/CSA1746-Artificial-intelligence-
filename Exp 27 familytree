@@ -1,0 +1,14 @@
+% Facts
+parent(john, mary).     % John is parent of Mary
+parent(john, paul).
+parent(mary, susan).
+parent(paul, david).
+
+male(john). male(paul). male(david).
+female(mary). female(susan).
+
+% Rules
+father(X, Y) :- parent(X, Y), male(X).
+mother(X, Y) :- parent(X, Y), female(X).
+grandparent(X, Y) :- parent(X, Z), parent(Z, Y).
+sibling(X, Y) :- parent(Z, X), parent(Z, Y), X \= Y.
