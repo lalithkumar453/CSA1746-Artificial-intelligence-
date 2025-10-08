@@ -1,0 +1,14 @@
+% Student–Teacher–Subject database
+
+teaches(mr_smith, cs101).
+teaches(ms_jones, math102).
+teaches(mr_brown, phy103).
+
+enrolled(john, cs101).
+enrolled(mary, math102).
+enrolled(peter, phy103).
+enrolled(susan, cs101).
+
+teacher_of(Student, Teacher) :-
+    enrolled(Student, SubCode),
+    teaches(Teacher, SubCode).
