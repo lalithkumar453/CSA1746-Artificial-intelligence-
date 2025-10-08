@@ -1,0 +1,10 @@
+% Facts: symptoms of diseases
+disease(flu) :- symptom(fever), symptom(cough), symptom(headache).
+disease(cold) :- symptom(sneezing), symptom(cough), symptom(runny_nose).
+disease(malaria) :- symptom(fever), symptom(chills), symptom(sweating).
+disease(typhoid) :- symptom(fever), symptom(abdominal_pain), symptom(headache).
+
+% Example user symptoms (you can modify these)
+symptom(fever).
+symptom(cough).
+symptom(headache).
