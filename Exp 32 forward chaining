@@ -1,0 +1,20 @@
+% ---------- Facts ----------
+fact(a).
+fact(b).
+
+% ---------- Rules ----------
+rule(c, [a,b]).       % c is true if a and b are true
+rule(d, [b,c]).       % d is true if b and c are true
+rule(e, [d]).         % e is true if d is true
+
+% ---------- Forward Chaining ----------
+forward_chain(Conclusions) :-
+    findall(F, fact(F), Facts),
+    infer(Facts, [], Conclusions).
+
+infer([], Inferred, Inferred).
+infer([F|Rest], Inferred, Conclusions) :-
+    (member(F, Inferred) -> infer(Rest, Inferred, Conclusions) ; 
+     findall(Head, (rule(Head, Body), subset(Body, [F|Inferred])), NewFacts),
+     append(NewFacts, Rest, Queue),
+     infer(Rest, [F|Inferred], Conclusions)).
